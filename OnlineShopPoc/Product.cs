@@ -17,16 +17,20 @@ public class Product
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Value cannot be null or whitespace.", nameof(name));
         if (price < 0) throw new ArgumentOutOfRangeException(nameof(price));
-        
+
+        Id = Guid.NewGuid();
         Name = name;
         Price = price;
     }
+
+    /// <summary> ID товара </summary>
+    public Guid Id { get; init; }
     
     /// <summary> Название товара </summary>
     public string Name { get; set; }
     
     /// <summary> Описание </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
     
     /// <summary> Цена </summary>
     public decimal Price { get; set; }
