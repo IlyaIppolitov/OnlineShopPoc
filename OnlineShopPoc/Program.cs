@@ -21,10 +21,15 @@ app.MapPost("/products/new", AddProduct);
 app.MapPut("/products/{productId}", UpdateProductById);
 app.MapDelete("/products/{productId}", DeleteProduct);
 
-
-void AddProduct(Product product)
+IResult AddProduct(Product product, HttpContext context)
 {
     catalog.AddProduct(product);
+    // Вернуть альтернативный код ответа
+    // Первый способ
+    return Results.Created($"/products/{product.Id}", product);
+    // Второй способ
+    context.Response.StatusCode = StatusCodes.Status201Created;
+    // context.Response.Headers.Add();
 }
     
 List<Product> GetProducts(HttpContext context)
