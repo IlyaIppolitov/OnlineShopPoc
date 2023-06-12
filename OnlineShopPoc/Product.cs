@@ -22,6 +22,7 @@ public class Product
         Name = name;
         Price = price;
     }
+
     /// <summary> ID товара </summary>
     public Guid Id { get; init; }
     
