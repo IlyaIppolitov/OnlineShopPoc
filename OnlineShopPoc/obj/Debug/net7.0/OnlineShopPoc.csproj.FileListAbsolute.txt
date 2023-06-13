@@ -24,3 +24,9 @@ D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\obj\Debug\net7.0\refint\Onlin
 D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\obj\Debug\net7.0\OnlineShopPoc.pdb
 D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\obj\Debug\net7.0\OnlineShopPoc.genruntimeconfig.cache
 D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\obj\Debug\net7.0\ref\OnlineShopPoc.dll
+D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\bin\Debug\net7.0\Microsoft.OpenApi.dll
+D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\obj\Debug\net7.0\OnlineShopPoc.MvcApplicationPartsAssemblyInfo.cs
+D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\obj\Debug\net7.0\OnlineShopPoc.csproj.CopyComplete

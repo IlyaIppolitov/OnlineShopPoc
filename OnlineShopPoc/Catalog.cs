@@ -1,4 +1,6 @@
-﻿namespace OnlineShopPoc;
+﻿using System.Collections.Concurrent;
+
+namespace OnlineShopPoc;
 
 public class Catalog
 {
@@ -7,7 +9,7 @@ public class Catalog
     /// Получить коллекцию товаров
     /// </summary>
     /// <returns>Коллекция товаров</returns>
-    public List<Product> GetProducts()
+    public ConcurrentDictionary<Guid, Product> GetProducts()
     {
         return _products;
     }
@@ -18,21 +20,21 @@ public class Catalog
     /// <param name="product">Товар</param>
     public void AddProduct(Product product)
     {
-        _products.Add(product);
+        if (!_products.TryAdd(product.Id, product))
+            throw new ArgumentException($"Product with ID {product.Id} already exists");
     }
 
     /// <summary>
     /// Удалить товар
     /// </summary>
-    /// <param name="product">Товар</param>
-    public bool DeleteProduct(Guid productId)
+    /// <param name="productId">Id товара</param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    public void DeleteProduct(Guid productId)
     {
-        foreach (var product in _products)
+        if (!_products.TryRemove(productId, out var ignored))
         {
-            if (productId.Equals(product.Id))
-                return _products.Remove(product);
+            throw new ArgumentOutOfRangeException($"Product with ID: {productId} not found");
         }
-        throw new ArgumentOutOfRangeException($"Product with ID: {productId} not found");
     }
 
     /// <summary>
@@ -42,20 +44,16 @@ public class Catalog
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public void UpdateProduct(Product newProduct)
     {
-        foreach (var product in _products)
+        if (!_products.TryGetValue(newProduct.Id, out var oldProduct))
         {
-            if (product.Id == newProduct.Id)
-            {
-                product.Name = newProduct.Name;
-                product.Description = newProduct.Description;
-                product.Price = newProduct.Price;
-                product.ProducedAt = newProduct.ProducedAt;
-                product.ExpiredAt = newProduct.ExpiredAt;
-                product.Stock = newProduct.Stock;
-                return;
-            }
+            throw new ArgumentOutOfRangeException($"Product with ID: {newProduct.Id} not found");
         }
-        throw new ArgumentOutOfRangeException($"Product with ID: {newProduct.Id} not found");
+
+        if(_products.TryUpdate(newProduct.Id, newProduct, oldProduct))
+        {
+            throw new ArgumentOutOfRangeException($"Product with ID: {newProduct.Id} not found");
+        }
+        
     }
 
     /// <summary>
@@ -66,10 +64,9 @@ public class Catalog
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public Product GetProductById(Guid productId)
     {
-        foreach (var product in _products)
+        if (_products.TryGetValue(productId, out var product))
         {
-            if (productId.Equals(product.Id))
-                return product;
+            return product;
         }
         throw new ArgumentOutOfRangeException($"Product with ID: {productId} not found");
     }
@@ -85,9 +82,9 @@ public class Catalog
     /// <summary>
     /// Заполнение перечня товаров по умолчанию
     /// </summary>
-    private List<Product> _products = GenerateProducts(5);
+    private ConcurrentDictionary<Guid, Product> _products = GenerateProducts(5);
     
-    static List<Product> GenerateProducts(int count)
+    static ConcurrentDictionary<Guid, Product> GenerateProducts(int count)
     {
 
         // Массив реальных названий товаров
@@ -111,7 +108,7 @@ public class Catalog
                 $"Wrong number of products, select less then {productNames.Length}");
         
         var random = new Random();
-        var products = new Product[count];
+        var products = new ConcurrentDictionary<Guid, Product>();
 
         for (int i = 0; i < count; i++)
         {
@@ -121,16 +118,15 @@ public class Catalog
             var expiredAt = producedAt.AddDays(random.Next(1, 365));
             var stock = random.NextDouble() * 100;
 
-            products[i] = new Product(name, price)
-            {
-                Description = "Описание " + name,
-                ProducedAt = producedAt,
-                ExpiredAt = expiredAt,
-                Stock = stock
-            };
+            var product = new Product(name, price);
+            product.Description = "Описание " + name;
+            product.ProducedAt = producedAt;
+            product.ExpiredAt = expiredAt;
+            product.Stock = stock;
+            products.TryAdd(product.Id, product);
         }
         
-        return products.ToList();
+        return products;
     }
     
 }

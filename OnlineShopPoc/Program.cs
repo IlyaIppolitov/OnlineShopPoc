@@ -3,7 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineShopPoc;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 Catalog catalog = new Catalog();
 
@@ -34,7 +41,7 @@ IResult AddProduct(Product product, HttpContext context)
     
 List<Product> GetProducts(HttpContext context)
 {
-    return catalog.GetProducts();
+    return catalog.GetProducts().Values.ToList();
 }
 
 Product GetProductById(string productId)

@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "cnc6fSNCRIpn8zGXoHmpmbqV1cZPh5SLPsIjEYlYDenvWb21l9tFbvDqxQzSyOzyG7WPtrbwQmkqb0Izsm1F3A==",
+  "dgSpecHash": "sDdymM+uGxy0TJ7AED3SITuk3Y+F2ClgB0OGVGNXJxDMbmrkae4IACOSOqY8oS7mB81mLxJc4jVw9PtV2eT+0A==",
   "success": true,
   "projectFilePath": "D:\\ITStep\\ASP.NET_Core\\OnlineShopPoc\\OnlineShopPoc\\OnlineShopPoc.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ippol\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\ippol\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\ippol\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\ippol\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\ippol\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\ippol\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
