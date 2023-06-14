@@ -6,13 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// регистрация зависимости
+builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
 
 var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-
-Catalog catalog = new Catalog();
 
 //RPC
 app.MapGet("/get_products", GetProducts);
@@ -28,7 +28,7 @@ app.MapPost("/products/new", AddProduct);
 app.MapPut("/products/{productId}", UpdateProductById);
 app.MapDelete("/products/{productId}", DeleteProduct);
 
-IResult AddProduct(Product product, HttpContext context)
+IResult AddProduct(Product product, ICatalog catalog, HttpContext context)
 {
     catalog.AddProduct(product);
     // Вернуть альтернативный код ответа
@@ -39,32 +39,32 @@ IResult AddProduct(Product product, HttpContext context)
     // context.Response.Headers.Add();
 }
     
-List<Product> GetProducts(HttpContext context)
+List<Product> GetProducts(ICatalog catalog, HttpContext context)
 {
     return catalog.GetProducts().Values.ToList();
 }
 
-Product GetProductById(string productId)
+Product GetProductById(string productId, ICatalog catalog)
 {
     return catalog.GetProductById(Guid.Parse(productId));
 }
 
-void DeleteProduct(string productId)
+void DeleteProduct(string productId, ICatalog catalog)
 {
     catalog.DeleteProduct(Guid.Parse(productId));
 }
 
-void UpdateProduct(Product product)
+void UpdateProduct(Product product, ICatalog catalog)
 {
     catalog.UpdateProduct(product);
 }
 
-void UpdateProductById(string productId, Product product)
+void UpdateProductById(string productId, Product product, ICatalog catalog)
 {
     catalog.UpdateProduct(product);
 }
 
-void ClearProducts()
+void ClearProducts(ICatalog catalog)
 {
     catalog.Clear();
 }

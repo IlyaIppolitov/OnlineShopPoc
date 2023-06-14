@@ -1,4 +1,6 @@
-﻿namespace OnlineShopPoc;
+﻿using System.Text.Json.Serialization;
+
+namespace OnlineShopPoc;
 
 /// <summary>
 /// Модель данных для товара в магазине
@@ -11,6 +13,7 @@ public class Product
     /// </summary>
     /// <param name="name"></param> Название товара
     /// <param name="price"></param> Цена
+    [JsonConstructor]
     public Product(string name, decimal price)
     {
         // Валидация параметров
@@ -21,6 +24,17 @@ public class Product
         Id = Guid.NewGuid();
         Name = name;
         Price = price;
+    }
+
+    public Product(Guid id, string name, string? description, decimal price, DateTime producedAt, DateTime expiredAt, double stock)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+        Price = price;
+        ProducedAt = producedAt;
+        ExpiredAt = expiredAt;
+        Stock = stock;
     }
 
     /// <summary> ID товара </summary>

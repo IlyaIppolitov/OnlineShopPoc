@@ -2,7 +2,7 @@
 
 namespace OnlineShopPoc;
 
-public class Catalog
+public class InMemoryCatalog : ICatalog
 {
 
     /// <summary>
