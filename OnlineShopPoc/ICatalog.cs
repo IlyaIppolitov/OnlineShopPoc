@@ -8,7 +8,15 @@ public interface ICatalog
     /// Получить коллекцию товаров
     /// </summary>
     /// <returns>Коллекция товаров</returns>
-    ConcurrentDictionary<Guid, Product> GetProducts();
+    List<Product> GetProducts(ICurrentTime curTime);
+
+    /// <summary>
+    /// Получить товар по значению ID
+    /// </summary>
+    /// <param name="productId"> ID </param>
+    /// <returns>Товар</returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    Product GetProductById(Guid productId, ICurrentTime curTime);
 
     /// <summary>
     /// Добавить товар
@@ -31,12 +39,11 @@ public interface ICatalog
     void UpdateProduct(Product newProduct);
 
     /// <summary>
-    /// Получить товар по значению ID
+    /// Обновить информацию о товаре по его ID
     /// </summary>
-    /// <param name="productId"> ID </param>
-    /// <returns>Товар</returns>
+    /// <param name="product">Id товара</param>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
-    Product GetProductById(Guid productId);
+    void UpdateProductById(Guid productId, Product newProduct);
 
     /// <summary>
     /// Очистить каталог

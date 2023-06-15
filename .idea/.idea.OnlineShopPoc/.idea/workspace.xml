@@ -9,20 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment=".idea/**/.idea added to ignored">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/ICatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/ICatalog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/ICurrentTime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/InMemoryCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/InMemoryCatalog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MondayTime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/UtcCurrentTime.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,8 +25,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6879c9ed20391a5ccfea363be5964fbcfe4f1dfde9558aa84b36df6b6ec92c6/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/79fbf5ff554b611622a4207ff363d1c026ccac52f8ef8f6318a1cc5ab7e4/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/ICatalog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2QnMFBHZGcTlwcsVCRgkkpPsw05" />
@@ -130,7 +117,6 @@
       <workItem from="1686679952571" duration="4740000" />
       <workItem from="1686764754830" duration="2568000" />
       <workItem from="1686844729791" duration="7639000" />
-      <workItem from="1686853254910" duration="406000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен Guid для Product">
       <created>1686397378577</created>
@@ -195,21 +181,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686852783556</updated>
     </task>
-    <task id="LOCAL-00010" summary="cache deleted">
-      <created>1686853426635</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1686853426635</updated>
-    </task>
-    <task id="LOCAL-00011" summary=".idea/**/.idea added to ignored">
-      <created>1686853605094</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1686853605094</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,9 +197,8 @@
     <MESSAGE value="Изменён тип коллекции на ConcurrentDictionary.&#10;Внедрён Swagger" />
     <MESSAGE value="Start of DI DIP integration" />
     <MESSAGE value="Добавлен Интерфейс получения времени. Реализовано получение UTC времени.&#10;Сделана заглушка для теста получения понедельника.&#10;Реализована скидка по понедельникам (видимо, не оптимально)." />
-    <MESSAGE value="Вывел из работы тестирование скидки" />
     <MESSAGE value="cache deleted" />
-    <MESSAGE value=".idea/**/.idea added to ignored" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea/**/.idea added to ignored" />
+    <MESSAGE value="Вывел из работы тестирование скидки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вывел из работы тестирование скидки" />
   </component>
 </project>

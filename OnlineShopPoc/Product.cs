@@ -5,7 +5,7 @@ namespace OnlineShopPoc;
 /// <summary>
 /// Модель данных для товара в магазине
 /// </summary>
-public class Product
+public class Product : ICloneable
 {
     
     /// <summary>
@@ -57,4 +57,10 @@ public class Product
     
     /// <summary> Количество товара на складе </summary>
     public double Stock { get; set; }
+
+    /// <summary> Метод для реализации интерфейса клонирования </summary>
+    public object Clone()
+    {
+        return MemberwiseClone();
+    }
 }

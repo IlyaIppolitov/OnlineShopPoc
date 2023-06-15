@@ -6,8 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// регистрация зависимости
+// регистрация зависимостей
 builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
+builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
+
+// Для тестирования скидки
+// builder.Services.AddSingleton<ICurrentTime, MondayTime>();
 
 var app = builder.Build();
 
@@ -39,14 +43,14 @@ IResult AddProduct(Product product, ICatalog catalog, HttpContext context)
     // context.Response.Headers.Add();
 }
     
-List<Product> GetProducts(ICatalog catalog, HttpContext context)
+List<Product> GetProducts(ICatalog catalog, ICurrentTime curTime)
 {
-    return catalog.GetProducts().Values.ToList();
+    return catalog.GetProducts(curTime);
 }
 
-Product GetProductById(string productId, ICatalog catalog)
+Product GetProductById(string productId, ICatalog catalog, ICurrentTime curTime)
 {
-    return catalog.GetProductById(Guid.Parse(productId));
+    return catalog.GetProductById(Guid.Parse(productId), curTime);
 }
 
 void DeleteProduct(string productId, ICatalog catalog)
@@ -61,7 +65,7 @@ void UpdateProduct(Product product, ICatalog catalog)
 
 void UpdateProductById(string productId, Product product, ICatalog catalog)
 {
-    catalog.UpdateProduct(product);
+    catalog.UpdateProductById(Guid.Parse(productId), product);
 }
 
 void ClearProducts(ICatalog catalog)
