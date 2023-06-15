@@ -8,9 +8,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // регистрация зависимостей
 builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
-// builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
+builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
+
 // Для тестирования скидки
-builder.Services.AddSingleton<ICurrentTime, MondayTime>();
+// builder.Services.AddSingleton<ICurrentTime, MondayTime>();
 
 var app = builder.Build();
 
