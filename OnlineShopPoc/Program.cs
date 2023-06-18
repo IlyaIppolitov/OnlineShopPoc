@@ -19,8 +19,8 @@ builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
 
 // регистрация зависимостей
 // Scoped
-builder.Services.AddSingleton<IEmailSender, MailKitSmtpEmailSender>();
 builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
+builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
 
 var app = builder.Build();
 
@@ -48,7 +48,7 @@ IResult AddProduct(Product product, ICatalog catalog, HttpContext context)
     // Первый способ
     return Results.Created($"/products/{product.Id}", product);
     // Второй способ
-    context.Response.StatusCode = StatusCodes.Status201Created;
+    // context.Response.StatusCode = StatusCodes.Status201Created;
     // context.Response.Headers.Add();
 }
     

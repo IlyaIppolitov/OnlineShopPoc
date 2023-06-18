@@ -2,5 +2,5 @@ namespace OnlineShopPoc;
 
 public interface IEmailSender
 {
-    Task SendEmail(string recepientEmail, string subject, string body);
+    Task SendEmailAsync(string recepientEmail, string subject, string body);
 }
