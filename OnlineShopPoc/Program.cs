@@ -4,14 +4,23 @@ using OnlineShopPoc;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// await emailService.SendMessage();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 // регистрация зависимостей
+// Singleton
 builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
 builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
 
 // Для тестирования скидки
 // builder.Services.AddSingleton<ICurrentTime, MondayTime>();
+
+// регистрация зависимостей
+// Scoped
+builder.Services.AddSingleton<IEmailSender, MailKitSmtpEmailSender>();
+builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
 
 var app = builder.Build();
 
@@ -74,3 +83,4 @@ void ClearProducts(ICatalog catalog)
 }
 
 app.Run();
+
