@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="" />
+    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="IEmailSender зарегистрирован как Singleton">
+      <change afterPath="$PROJECT_DIR$/OnlineShopPoc/SalesNotificatorBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +33,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d894e53c1d0e27ee0e666475a55d3c2db944f4221f0b6de4ebda38ff1fa/IActionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/79fbf5ff554b611622a4207ff363d1c026ccac52f8ef8f6318a1cc5ab7e4/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/MailKitSmtpEmailSender.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2QnMFBHZGcTlwcsVCRgkkpPsw05" />
@@ -124,6 +130,7 @@
       <workItem from="1687103721877" duration="5049000" />
       <workItem from="1687110239179" duration="492000" />
       <workItem from="1687110816739" duration="1830000" />
+      <workItem from="1687194278086" duration="5423000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен Guid для Product">
       <created>1686397378577</created>
@@ -209,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687103988091</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="IEmailSender зарегистрирован как Singleton">
+      <created>1687194329588</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687194329588</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +254,7 @@
     <MESSAGE value="cache deleted" />
     <MESSAGE value="minor" />
     <MESSAGE value="Реализован сервис отправки email&#10;Реализован фоновый сервис отправки сообщения при запуске." />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализован сервис отправки email&#10;Реализован фоновый сервис отправки сообщения при запуске." />
+    <MESSAGE value="IEmailSender зарегистрирован как Singleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="IEmailSender зарегистрирован как Singleton" />
   </component>
 </project>

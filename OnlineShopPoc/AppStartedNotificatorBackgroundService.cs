@@ -4,16 +4,21 @@ namespace OnlineShopPoc;
 
 public class AppStartedNotificatorBackgroundService : BackgroundService
 {
-    private readonly IEmailSender _emailSender;
+    private readonly IServiceProvider _serviceProvider;
     
-    public AppStartedNotificatorBackgroundService(IEmailSender emailSender)
+    public AppStartedNotificatorBackgroundService(
+        IServiceProvider serviceProvider)
     { 
-        _emailSender = emailSender ?? throw new ArgumentNullException(nameof(emailSender));
+        _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
     }
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение запущено", "Приложение запущено");
+        await using var scope = _serviceProvider.CreateAsyncScope();
+        var localServiceProvider = scope.ServiceProvider;
+        var emailSender = localServiceProvider.GetRequiredService<IEmailSender>();
+
+        await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение запущено", "Приложение запущено");
 
         // Циклическая отправка сообщения о работоспособности сервиса
         while (!stoppingToken.IsCancellationRequested)
@@ -22,7 +27,7 @@ public class AppStartedNotificatorBackgroundService : BackgroundService
             
             var totalBytesOfMemoryUsed = System.Diagnostics.Process.GetCurrentProcess().WorkingSet64;
             
-            await _emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение работает", $"Приложение потребляет {totalBytesOfMemoryUsed} байт!");
+            await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение работает", $"Приложение потребляет {totalBytesOfMemoryUsed} байт!");
         }
     }
 }
