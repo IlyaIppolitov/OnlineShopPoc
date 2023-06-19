@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

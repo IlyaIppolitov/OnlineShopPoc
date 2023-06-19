@@ -20,7 +20,7 @@ builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
 // регистрация зависимостей
 // Scoped
 builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
-builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
+builder.Services.AddSingleton<IEmailSender, MailKitSmtpEmailSender>();
 
 var app = builder.Build();
 
