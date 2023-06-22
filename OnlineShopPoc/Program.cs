@@ -9,6 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Подключение smtpConfig, настраемого из файла конфигураций json
+builder.Services.AddOptions<SmtpConfig>()
+    .BindConfiguration("SmtpConfig")
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
 // регистрация зависимостей
 // Singleton
 builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
@@ -20,6 +26,7 @@ builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
 // регистрация зависимостей
 // Scoped
 builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
+builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
 builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
 builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
 

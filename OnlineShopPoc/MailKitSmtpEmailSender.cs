@@ -1,4 +1,5 @@
 using MailKit.Net.Smtp;
+using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
 
@@ -6,6 +7,14 @@ namespace OnlineShopPoc;
 
 public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
 {
+    private readonly SmtpConfig _smtpConfig;
+    
+    public MailKitSmtpEmailSender(IOptions<SmtpConfig> options)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+        
+        _smtpConfig = options.Value;
+    }
     
     private readonly SmtpClient _smtpClient = new();
     public async ValueTask DisposeAsync()
@@ -29,7 +38,7 @@ public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
             {
                 Text = body,
             },
-            From = { MailboxAddress.Parse("asp2023pv112@rodion-m.ru") },
+            From = { MailboxAddress.Parse(_smtpConfig.UserName) },
             To = { MailboxAddress.Parse(recepientEmail) },
         };
 
@@ -40,10 +49,10 @@ public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
     private async Task EnsureConnectedAndAuthentificatedAsync()
     {
         if (!_smtpClient.IsConnected)
-            await _smtpClient.ConnectAsync("smtp.beget.com", 25, false);
+            await _smtpClient.ConnectAsync(_smtpConfig.Host, _smtpConfig.Port, false);
         
         if (!_smtpClient.IsAuthenticated)
-            await _smtpClient.AuthenticateAsync("asp2023pv112@rodion-m.ru", _emailPassword);
+            await _smtpClient.AuthenticateAsync(_smtpConfig.UserName, _emailPassword);
     }
 
     private string? _emailPassword = System.Environment.GetEnvironmentVariable("asp2023pv112@rodion-m.ru");
