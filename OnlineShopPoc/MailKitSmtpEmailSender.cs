@@ -8,12 +8,14 @@ namespace OnlineShopPoc;
 public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
 {
     private readonly SmtpConfig _smtpConfig;
+    private readonly ILogger<EmailSenderLoggingDecorator> _logger;
     
-    public MailKitSmtpEmailSender(IOptions<SmtpConfig> options)
+    public MailKitSmtpEmailSender(IOptionsSnapshot<SmtpConfig> snapshotOptionsAccessor, ILogger<EmailSenderLoggingDecorator> logger)
     {
-        ArgumentNullException.ThrowIfNull(options);
+        ArgumentNullException.ThrowIfNull(snapshotOptionsAccessor);
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         
-        _smtpConfig = options.Value;
+        _smtpConfig = snapshotOptionsAccessor.Value;
     }
     
     private readonly SmtpClient _smtpClient = new();
@@ -30,7 +32,6 @@ public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
         ArgumentNullException.ThrowIfNull(subject);
         ArgumentNullException.ThrowIfNull(body);
 
-
         var emailMessage = new MimeMessage
         {
             Subject = subject,
@@ -44,6 +45,7 @@ public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
 
         await EnsureConnectedAndAuthentificatedAsync();
         await _smtpClient.SendAsync(emailMessage);
+        _logger.LogInformation($"Email sent from {_smtpConfig.SendFrom}");
     }
 
     private async Task EnsureConnectedAndAuthentificatedAsync()

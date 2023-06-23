@@ -5,6 +5,7 @@ namespace OnlineShopPoc;
 // Паттерн декоратор
 public class EmailSenderLoggingDecorator : IEmailSender // приём: перехват зависимостей
 {
+
     private readonly IEmailSender _emailSender;
     private readonly ILogger<EmailSenderLoggingDecorator> _logger;
     private readonly Stopwatch _sw;

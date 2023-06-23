@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OnlineShopPoc/EmailSenderLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OnlineShopPoc/SmtpConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/EmailSenderLoggingDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/EmailSenderLoggingDecorator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/SmtpConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/SmtpConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +33,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3084d11350b2488ca852a8736f33547cb1c880/_cc311/IAsyncDisposable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54e61fc479554ef3893bb7c3f6f12764f739993030a41e6992844a74a6445d/OptionsBuilderDataAnnotationsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6879c9ed20391a5ccfea363be5964fbcfe4f1dfde9558aa84b36df6b6ec92c6/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d894e53c1d0e27ee0e666475a55d3c2db944f4221f0b6de4ebda38ff1fa/IActionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/79fbf5ff554b611622a4207ff363d1c026ccac52f8ef8f6318a1cc5ab7e4/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2QnMFBHZGcTlwcsVCRgkkpPsw05" />
@@ -48,6 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.3875&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -133,7 +137,9 @@
       <workItem from="1687110816739" duration="1830000" />
       <workItem from="1687194278086" duration="5423000" />
       <workItem from="1687362011346" duration="8589000" />
-      <workItem from="1687451662000" duration="862000" />
+      <workItem from="1687451662000" duration="5489000" />
+      <workItem from="1687524092142" duration="457000" />
+      <workItem from="1687532261186" duration="1502000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен Guid для Product">
       <created>1686397378577</created>
@@ -226,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687194329588</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Реализовано логирование при помощи паттерна Декоратор.">
+      <created>1687453088106</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687453088106</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +271,7 @@
     <MESSAGE value="minor" />
     <MESSAGE value="Реализован сервис отправки email&#10;Реализован фоновый сервис отправки сообщения при запуске." />
     <MESSAGE value="IEmailSender зарегистрирован как Singleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="IEmailSender зарегистрирован как Singleton" />
+    <MESSAGE value="Реализовано логирование при помощи паттерна Декоратор." />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовано логирование при помощи паттерна Декоратор." />
   </component>
 </project>

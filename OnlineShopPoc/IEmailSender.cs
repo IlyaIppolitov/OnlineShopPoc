@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Options;
+
 namespace OnlineShopPoc;
 
 public interface IEmailSender

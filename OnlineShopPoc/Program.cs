@@ -15,6 +15,10 @@ builder.Services.AddOptions<SmtpConfig>()
     .ValidateDataAnnotations()
     .ValidateOnStart();
 
+
+// builder.Services.Configure<SmtpConfig>(
+//     builder.Configuration.GetSection("SmtpConfig"));
+
 // регистрация зависимостей
 // Singleton
 builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
