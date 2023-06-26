@@ -7,46 +7,59 @@ public class SalesNotificatorBackgroundService : BackgroundService
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly ILogger<SalesNotificatorBackgroundService> _logger;
+    private readonly int _attemptLimit;
 
     public SalesNotificatorBackgroundService(
         IServiceProvider serviceProvider,
-        ILogger<SalesNotificatorBackgroundService> logger)
+        ILogger<SalesNotificatorBackgroundService> logger,
+        IConfiguration configuration)
     {
         _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
         _logger = logger ??  throw new ArgumentNullException(nameof(logger));
+        if (configuration is null) throw new ArgumentNullException(nameof(configuration));
+        _attemptLimit = configuration.GetValue<int>("SalesEmailAttemptCount");
     }
 
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
     {
+
         await using var scope = _serviceProvider.CreateAsyncScope();
         var localServiceProvider = scope.ServiceProvider;
         var emailSender = localServiceProvider.GetRequiredService<IEmailSender>();
+        var sw = Stopwatch.StartNew();
         
         var users = new User[]
         {
             new User("IppolitovIS@yandex.ru")
         };
 
-        var sw = Stopwatch.StartNew();
         foreach (var user in users)
         {
-            for (var counter = 0; counter <= _maxAttempt; ++counter)
+            await SendEmailWithAttempts(user);
+        }
+        
+        async Task SendEmailWithAttempts(User user)
+        {
+            for (var attempt = 1; attempt <= _attemptLimit; ++attempt)
             {
                 try
                 {
                     sw.Restart();
                     await emailSender.SendEmailAsync(user.Email, "Акции!", "Промо акции!");
-                    counter = _maxAttempt;
                     _logger.LogInformation("Email sent to {Email} in {ElapsedMilliseconds}", user.Email,
                         sw.ElapsedMilliseconds);
+                    break;
+                }
+                catch (Exception e) when (attempt < _attemptLimit)
+                {
+                    _logger.LogWarning(e, "Повторная отправка сообщения: {Email}, номер {counter}",
+                        user.Email, attempt);
+                    await Task.Delay(1000);
                 }
                 catch (Exception e)
                 {
-                    if (counter >= _maxAttempt)
-                        _logger.LogError(e, "Ошибка отправка сообщения: {Email}", user.Email);
-                    else if (counter >= 0)
-                        _logger.LogWarning(e, "Повторная отправка сообщения: {Email}, номер {counter}", 
-                            user.Email, counter+1);
+                    _logger.LogError(e, "Ошибка отправка сообщения: {Email}", user.Email);
+                    await Task.Delay(1000);
                 }
             }
         }
@@ -60,8 +73,6 @@ public class SalesNotificatorBackgroundService : BackgroundService
         // Email sent to IppolitovIS@yandex.ru in 34 ms
 
     }
-    
-    private readonly int _maxAttempt = 2;
 }
 
 public record User(string Email);

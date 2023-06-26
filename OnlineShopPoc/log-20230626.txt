@@ -1,0 +1,75 @@
+2023-06-26 20:51:45.888 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-26 20:51:46.076 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-26 20:51:46.078 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-26 20:51:46.079 +03:00 [INF] App Started
+2023-06-26 20:51:46.079 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-26 20:51:46.080 +03:00 [INF] Hosting environment: Development
+2023-06-26 20:51:46.080 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-26 20:51:46.356 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger - -
+2023-06-26 20:51:46.442 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger - - - 301 0 - 88.3279ms
+2023-06-26 20:51:46.457 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-26 20:51:46.549 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 92.8144ms
+2023-06-26 20:51:46.566 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/swagger-ui.css - -
+2023-06-26 20:51:46.567 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/swagger-ui-standalone-preset.js - -
+2023-06-26 20:51:46.567 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/swagger-ui-bundle.js - -
+2023-06-26 20:51:46.601 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-06-26 20:51:46.601 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-06-26 20:51:46.603 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/swagger-ui.css - - - 200 144929 text/css 36.4497ms
+2023-06-26 20:51:46.604 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 37.4363ms
+2023-06-26 20:51:46.609 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-06-26 20:51:46.613 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 46.1198ms
+2023-06-26 20:51:46.882 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-26 20:51:46.891 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-26 20:51:46.912 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/favicon-32x32.png - -
+2023-06-26 20:51:46.914 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-06-26 20:51:46.917 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/favicon-32x32.png - - - 200 628 image/png 4.3789ms
+2023-06-26 20:51:47.033 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.9093ms
+2023-06-26 20:51:54.281 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 1
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\SalesNotificatorBackgroundService.cs:line 48
+2023-06-26 20:51:55.305 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-26 20:52:03.599 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 2
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\SalesNotificatorBackgroundService.cs:line 48
+2023-06-26 20:52:04.605 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-26 20:52:12.913 +03:00 [ERR] Ошибка отправка сообщения: IppolitovIS@yandex.ru
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\SalesNotificatorBackgroundService.cs:line 48
+2023-06-26 20:52:48.578 +03:00 [INF] Application is shutting down...
+2023-06-26 20:52:48.590 +03:00 [INF] Shut down complete
