@@ -5,11 +5,16 @@ namespace OnlineShopPoc;
 public class AppStartedNotificatorBackgroundService : BackgroundService
 {
     private readonly IServiceProvider _serviceProvider;
+    private readonly ILogger<AppStartedNotificatorBackgroundService> _logger;
     
     public AppStartedNotificatorBackgroundService(
-        IServiceProvider serviceProvider)
+        IServiceProvider serviceProvider,
+        ILogger<AppStartedNotificatorBackgroundService> logger,
+        IHostApplicationLifetime hostApplicationLifetime)
     { 
         _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+        _logger = logger ??  throw new ArgumentNullException(nameof(logger));
+        hostApplicationLifetime.ApplicationStarted.Register(() => _logger.LogInformation("App Started"));
     }
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -19,7 +24,7 @@ public class AppStartedNotificatorBackgroundService : BackgroundService
             var localServiceProvider = scope.ServiceProvider;
             var emailSender = localServiceProvider.GetRequiredService<IEmailSender>();
 
-            await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение запущено", "Приложение запущено");
+            // await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение запущено", "Приложение запущено");
         }
 
         // Циклическая отправка сообщения о работоспособности сервиса
@@ -32,7 +37,7 @@ public class AppStartedNotificatorBackgroundService : BackgroundService
                 var emailSender = localServiceProvider.GetRequiredService<IEmailSender>();
                 var totalBytesOfMemoryUsed = System.Diagnostics.Process.GetCurrentProcess().WorkingSet64;
             
-                await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение работает", $"Приложение потребляет {totalBytesOfMemoryUsed} байт!");
+                // await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение работает", $"Приложение потребляет {totalBytesOfMemoryUsed} байт!");
             }
         }
     }

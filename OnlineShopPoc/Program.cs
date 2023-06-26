@@ -1,57 +1,87 @@
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using OnlineShopPoc;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+// Инициализация временного логгера, для контроля процесса загрузки
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateBootstrapLogger(); //означает, что глобальный логер будет заменен на вариант из Host.UseSerilog
+Log.Information("Starting up");
 
-// await emailService.SendMessage();
+// Попытка сборки билдера
+try
+{
+    var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+    // Подключение Serilog
+    builder.Host.UseSerilog((_, conf) =>
+    {
+        conf
+            .WriteTo.Console()
+            .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day);
+    });
 
-// Подключение smtpConfig, настраемого из файла конфигураций json
-builder.Services.AddOptions<SmtpConfig>()
-    .BindConfiguration("SmtpConfig")
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
+    // await emailService.SendMessage();
 
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
 
-// builder.Services.Configure<SmtpConfig>(
-//     builder.Configuration.GetSection("SmtpConfig"));
+    // Подключение smtpConfig, настраемого из файла конфигураций json
+    builder.Services.AddOptions<SmtpConfig>()
+        .BindConfiguration("SmtpConfig")
+        .ValidateDataAnnotations()
+        .ValidateOnStart();
 
-// регистрация зависимостей
-// Singleton
-builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
-builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
+    // Подключение пользовательских секретов
+    // builder.Configuration.AddUserSecrets<SmtpConfig>();
 
-// Для тестирования скидки
-// builder.Services.AddSingleton<ICurrentTime, MondayTime>();
+    // регистрация зависимостей
+    // Singleton
+    builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
+    builder.Services.AddSingleton<ICurrentTime, UtcCurrentTime>();
 
-// регистрация зависимостей
-// Scoped
-builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
-builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
-builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
-builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
+    // Для тестирования скидки
+    // builder.Services.AddSingleton<ICurrentTime, MondayTime>();
 
-var app = builder.Build();
+    // регистрация зависимостей
+    // Scoped
+    builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
+    builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
+    builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
+    builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+    var app = builder.Build();
 
-//RPC
-app.MapGet("/get_products", GetProducts);
-app.MapPost("/add_product", AddProduct);
-app.MapPost("/update_product", UpdateProduct);
-app.MapPost("/delete_product", DeleteProduct);
-app.MapGet("/get_product", GetProductById);
-app.MapPost("/clear_products", ClearProducts);
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
-//REST
-app.MapGet("/products/all", GetProducts);
-app.MapPost("/products/new", AddProduct);
-app.MapPut("/products/{productId}", UpdateProductById);
-app.MapDelete("/products/{productId}", DeleteProduct);
+    //RPC   
+    app.MapGet("/get_products", GetProducts);
+    app.MapPost("/add_product", AddProduct);
+    app.MapPost("/update_product", UpdateProduct);
+    app.MapPost("/delete_product", DeleteProduct);
+    app.MapGet("/get_product", GetProductById);
+    app.MapPost("/clear_products", ClearProducts);
+
+    //REST
+    app.MapGet("/products/all", GetProducts);
+    app.MapPost("/products/new", AddProduct);
+    app.MapPut("/products/{productId}", UpdateProductById);
+    app.MapDelete("/products/{productId}", DeleteProduct);
+
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Сервер рухнул!");
+}
+finally
+{
+    Log.Information("Shut down complete");
+    await Log.CloseAndFlushAsync(); //перед выходом дожидаемся пока все логи будут записаны
+}
 
 IResult AddProduct(Product product, ICatalog catalog, HttpContext context)
 {
@@ -93,6 +123,3 @@ void ClearProducts(ICatalog catalog)
 {
     catalog.Clear();
 }
-
-app.Run();
-

@@ -12,11 +12,10 @@
     <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/EmailSenderLoggingDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/EmailSenderLoggingDecorator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/SmtpConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/SmtpConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/SalesNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/SalesNotificatorBackgroundService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OnlineShopPoc/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +31,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7bcdc699102c470890dba28faba1fa95d5c00/a8/e85664c1/MailService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7bcdc699102c470890dba28faba1fa95d5c00/be/5854bcfc/MailTransport.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2048d5b61a78bef52894eecf448e34a883cb22e1abb6711e0eb6d690a3b0/WebApplication.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3084d11350b2488ca852a8736f33547cb1c880/_cc311/IAsyncDisposable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54e61fc479554ef3893bb7c3f6f12764f739993030a41e6992844a74a6445d/OptionsBuilderDataAnnotationsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/54e61fc479554ef3893bb7c3f6f12764f739993030a41e6992844a74a6445d/OptionsBuilderDataAnnotationsExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6879c9ed20391a5ccfea363be5964fbcfe4f1dfde9558aa84b36df6b6ec92c6/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d894e53c1d0e27ee0e666475a55d3c2db944f4221f0b6de4ebda38ff1fa/IActionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/79fbf5ff554b611622a4207ff363d1c026ccac52f8ef8f6318a1cc5ab7e4/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,27 +48,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.3875&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.3875",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\ippol\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\ippol\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\ippol\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\ippol\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\ippol\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\ippol\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.OnlineShopPoc: https">
     <configuration name="OnlineShopPoc: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" />
@@ -139,7 +142,11 @@
       <workItem from="1687362011346" duration="8589000" />
       <workItem from="1687451662000" duration="5489000" />
       <workItem from="1687524092142" duration="457000" />
-      <workItem from="1687532261186" duration="1502000" />
+      <workItem from="1687532261186" duration="1681000" />
+      <workItem from="1687537274049" duration="344000" />
+      <workItem from="1687537711462" duration="5734000" />
+      <workItem from="1687679400899" duration="91000" />
+      <workItem from="1687700353488" duration="9787000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен Guid для Product">
       <created>1686397378577</created>
@@ -239,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687453088106</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавлена возможность изменений SmtpConfig без перезапуска&#10;Добавлен EmailSenderLoggingDecorator">
+      <created>1687534687717</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687534687717</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +286,7 @@
     <MESSAGE value="Реализован сервис отправки email&#10;Реализован фоновый сервис отправки сообщения при запуске." />
     <MESSAGE value="IEmailSender зарегистрирован как Singleton" />
     <MESSAGE value="Реализовано логирование при помощи паттерна Декоратор." />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано логирование при помощи паттерна Декоратор." />
+    <MESSAGE value="Добавлена возможность изменений SmtpConfig без перезапуска&#10;Добавлен EmailSenderLoggingDecorator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность изменений SmtpConfig без перезапуска&#10;Добавлен EmailSenderLoggingDecorator" />
   </component>
 </project>

@@ -1,0 +1,36 @@
+2023-06-23 21:25:30.265 +03:00 [INF] Email sent to IppolitovIS@yandex.ru
+2023-06-23 21:25:30.288 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-23 21:25:30.413 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-23 21:25:30.413 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-23 21:25:30.414 +03:00 [INF] App Started
+2023-06-23 21:25:30.415 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-23 21:25:30.415 +03:00 [INF] Hosting environment: Development
+2023-06-23 21:25:30.416 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-23 21:25:30.722 +03:00 [INF] Email sent from III@yandex.ru
+2023-06-23 21:25:30.725 +03:00 [INF] Email to IppolitovIS@yandex.ru was sent in 435 ms.
+2023-06-23 21:25:30.726 +03:00 [INF] Email sent to IppolitovIS@yandex.ru in 467
+2023-06-23 21:25:30.827 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-23 21:25:30.988 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 163.0338ms
+2023-06-23 21:25:31.142 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-23 21:25:31.153 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-23 21:25:31.306 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.6166ms
+2023-06-23 21:26:24.687 +03:00 [INF] Application is shutting down...
+2023-06-23 21:26:24.703 +03:00 [INF] Shut down complete
+2023-06-23 21:29:31.948 +03:00 [INF] Email sent to IppolitovIS@yandex.ru
+2023-06-23 21:29:31.971 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-23 21:29:32.084 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-23 21:29:32.085 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-23 21:29:32.085 +03:00 [INF] App Started
+2023-06-23 21:29:32.086 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-23 21:29:32.086 +03:00 [INF] Hosting environment: Development
+2023-06-23 21:29:32.087 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-23 21:29:32.438 +03:00 [INF] Email sent from III@yandex.ru
+2023-06-23 21:29:32.440 +03:00 [INF] Email to IppolitovIS@yandex.ru was sent in 466 ms.
+2023-06-23 21:29:32.440 +03:00 [INF] Email sent to {Email} in {ElapsedMilliseconds}, user.Email, sw.ElapsedMilliseconds
+2023-06-23 21:29:32.461 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-23 21:29:32.622 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 162.9992ms
+2023-06-23 21:29:32.761 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-23 21:29:32.776 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-23 21:29:32.884 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 123.2753ms
+2023-06-23 21:46:05.576 +03:00 [INF] Application is shutting down...
+2023-06-23 21:46:05.588 +03:00 [INF] Shut down complete

@@ -51,11 +51,13 @@ public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
     private async Task EnsureConnectedAndAuthentificatedAsync()
     {
         if (!_smtpClient.IsConnected)
+        {
             await _smtpClient.ConnectAsync(_smtpConfig.Host, _smtpConfig.Port, false);
+        }
         
         if (!_smtpClient.IsAuthenticated)
-            await _smtpClient.AuthenticateAsync(_smtpConfig.UserName, _emailPassword);
+            await _smtpClient.AuthenticateAsync(_smtpConfig.UserName, _smtpConfig.Password);
     }
 
-    private string? _emailPassword = System.Environment.GetEnvironmentVariable("asp2023pv112@rodion-m.ru");
+    // private string? _emailPassword = System.Environment.GetEnvironmentVariable("asp2023pv112@rodion-m.ru");
 }

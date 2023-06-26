@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 
 namespace OnlineShopPoc;
 
@@ -23,16 +24,31 @@ public class SalesNotificatorBackgroundService : BackgroundService
         
         var users = new User[]
         {
-            new User("IppolitovIS@yandex.ru"),
-            new User("IppolitovIS@yandex.ru"),
+            new User("IppolitovIS@yandex.ru")
         };
 
         var sw = Stopwatch.StartNew();
         foreach (var user in users)
         {
-            sw.Restart();
-            await emailSender.SendEmailAsync(user.Email, "Акции!", "Промо акции!");
-            _logger.LogInformation($"Email sent to {user.Email} in {sw.ElapsedMilliseconds}");
+            for (var counter = 0; counter <= _maxAttempt; ++counter)
+            {
+                try
+                {
+                    sw.Restart();
+                    await emailSender.SendEmailAsync(user.Email, "Акции!", "Промо акции!");
+                    counter = _maxAttempt;
+                    _logger.LogInformation("Email sent to {Email} in {ElapsedMilliseconds}", user.Email,
+                        sw.ElapsedMilliseconds);
+                }
+                catch (Exception e)
+                {
+                    if (counter >= _maxAttempt)
+                        _logger.LogError(e, "Ошибка отправка сообщения: {Email}", user.Email);
+                    else if (counter >= 0)
+                        _logger.LogWarning(e, "Повторная отправка сообщения: {Email}, номер {counter}", 
+                            user.Email, counter+1);
+                }
+            }
         }
         
         //Singleton
@@ -44,6 +60,8 @@ public class SalesNotificatorBackgroundService : BackgroundService
         // Email sent to IppolitovIS@yandex.ru in 34 ms
 
     }
+    
+    private readonly int _maxAttempt = 2;
 }
 
 public record User(string Email);
