@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using Polly;
+using Polly.Retry;
 
 namespace OnlineShopPoc;
 
@@ -35,7 +37,7 @@ public class SalesNotificatorBackgroundService : BackgroundService
 
         foreach (var user in users)
         {
-            await SendEmailWithAttempts(user);
+            await emailSender.SendEmailAsync(user.Email, "Акции!", "Промо акции!");
         }
         
         async Task SendEmailWithAttempts(User user)
@@ -45,7 +47,6 @@ public class SalesNotificatorBackgroundService : BackgroundService
                 try
                 {
                     sw.Restart();
-                    await emailSender.SendEmailAsync(user.Email, "Акции!", "Промо акции!");
                     _logger.LogInformation("Email sent to {Email} in {ElapsedMilliseconds}", user.Email,
                         sw.ElapsedMilliseconds);
                     break;

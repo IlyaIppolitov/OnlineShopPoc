@@ -1,0 +1,879 @@
+2023-06-27 19:24:31.454 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-27 19:24:31.586 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:24:31.588 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:24:31.589 +03:00 [INF] App Started
+2023-06-27 19:24:31.589 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:24:31.590 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:24:31.590 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:24:31.938 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:24:32.089 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 152.5566ms
+2023-06-27 19:24:32.382 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:24:32.399 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:24:32.538 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 155.6003ms
+2023-06-27 19:24:40.053 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 1
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:24:41.080 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-27 19:24:49.546 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 2
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:24:50.555 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-27 19:24:59.060 +03:00 [ERR] Ошибка отправка сообщения: IppolitovIS@yandex.ru
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:25:34.628 +03:00 [INF] Application is shutting down...
+2023-06-27 19:25:34.641 +03:00 [INF] Shut down complete
+2023-06-27 19:25:43.875 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-27 19:25:44.113 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:25:44.115 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:25:44.116 +03:00 [INF] App Started
+2023-06-27 19:25:44.116 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:25:44.117 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:25:44.117 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:25:44.594 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:25:44.822 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 229.7765ms
+2023-06-27 19:25:44.978 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:25:44.991 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:25:45.133 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.8710ms
+2023-06-27 19:25:52.583 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 1
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:25:53.629 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-27 19:26:02.162 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 2
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:26:03.171 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Акции!, Промо акции!.
+2023-06-27 19:26:11.717 +03:00 [ERR] Ошибка отправка сообщения: IppolitovIS@yandex.ru
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:27:42.796 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 1
+System.ArgumentNullException: Value cannot be null. (Parameter 'context')
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at OnlineShopPoc.EmailSenderRetryDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderRetryDecorator.cs:line 34
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:27:42.983 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:27:42.984 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:27:42.985 +03:00 [INF] App Started
+2023-06-27 19:27:42.985 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:27:42.986 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:27:42.986 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:27:43.503 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:27:43.700 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 198.5748ms
+2023-06-27 19:27:43.838 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:27:43.845 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:27:43.875 +03:00 [WRN] Повторная отправка сообщения: IppolitovIS@yandex.ru, номер 2
+System.ArgumentNullException: Value cannot be null. (Parameter 'context')
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at OnlineShopPoc.EmailSenderRetryDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderRetryDecorator.cs:line 34
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:27:43.969 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.1920ms
+2023-06-27 19:27:44.894 +03:00 [ERR] Ошибка отправка сообщения: IppolitovIS@yandex.ru
+System.ArgumentNullException: Value cannot be null. (Parameter 'context')
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at OnlineShopPoc.EmailSenderRetryDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderRetryDecorator.cs:line 34
+   at OnlineShopPoc.SalesNotificatorBackgroundService.<>c__DisplayClass4_0.<<ExecuteAsync>g__SendEmailWithAttempts|0>d.MoveNext() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\SalesNotificatorBackgroundService.cs:line 50
+2023-06-27 19:30:21.413 +03:00 [FTL] Сервер рухнул!
+System.ArgumentNullException: Value cannot be null. (Parameter 'context')
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at OnlineShopPoc.EmailSenderRetryDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderRetryDecorator.cs:line 34
+   at OnlineShopPoc.AppStartedNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\AppStartedNotificatorBackgroundService.cs:line 27
+   at OnlineShopPoc.AppStartedNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\BackgroundServices\AppStartedNotificatorBackgroundService.cs:line 31
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Program.cs:line 75
+2023-06-27 19:30:21.461 +03:00 [INF] Shut down complete
+2023-06-27 19:45:29.089 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:45:29.332 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:45:29.334 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:45:29.335 +03:00 [INF] App Started
+2023-06-27 19:45:29.335 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:45:29.336 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:45:29.336 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:45:29.988 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:45:30.202 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 215.8892ms
+2023-06-27 19:45:30.322 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:45:30.329 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:45:30.432 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.8513ms
+2023-06-27 19:45:37.793 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: 1
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:45:37.825 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:45:46.369 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: 2
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:45:46.375 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:45:54.931 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: 3
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:45:54.936 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:46:13.710 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 19:46:27.206 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:46:27.339 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:46:27.340 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:46:27.341 +03:00 [INF] App Started
+2023-06-27 19:46:27.342 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:46:27.342 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:46:27.343 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:46:27.775 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:46:27.928 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 153.9631ms
+2023-06-27 19:46:28.050 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:46:28.059 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:46:28.162 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 111.9836ms
+2023-06-27 19:46:35.773 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: 1
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:46:35.791 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:46:44.264 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: 2
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:46:44.270 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:46:52.798 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: 3
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:46:52.804 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:47:01.318 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 19:47:17.193 +03:00 [INF] Application is shutting down...
+2023-06-27 19:47:17.209 +03:00 [INF] Shut down complete
+2023-06-27 19:57:49.223 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:57:49.354 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:57:49.355 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:57:49.356 +03:00 [INF] App Started
+2023-06-27 19:57:49.357 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:57:49.357 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:57:49.357 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:57:49.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:57:49.929 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 147.3207ms
+2023-06-27 19:57:50.052 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:57:50.061 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:57:50.157 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 105.1403ms
+2023-06-27 19:57:57.795 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:02"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:57:59.821 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:58:08.322 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:04"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:58:12.330 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:58:20.823 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:06"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 19:58:26.830 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:58:35.318 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 19:59:09.300 +03:00 [INF] Application is shutting down...
+2023-06-27 19:59:09.314 +03:00 [INF] Shut down complete
+2023-06-27 19:59:57.688 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 19:59:57.825 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 19:59:57.827 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 19:59:57.828 +03:00 [INF] App Started
+2023-06-27 19:59:57.829 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 19:59:57.829 +03:00 [INF] Hosting environment: Development
+2023-06-27 19:59:57.830 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 19:59:58.204 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 19:59:58.359 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 155.7066ms
+2023-06-27 19:59:58.496 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 19:59:58.505 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 19:59:58.603 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 106.9027ms
+2023-06-27 20:00:06.262 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:02"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:00:08.287 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:00:16.814 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:04"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:00:20.833 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:00:29.342 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:06"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:00:35.358 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:00:42.868 +03:00 [INF] Application is shutting down...
+2023-06-27 20:00:43.859 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 20:00:43.873 +03:00 [INF] Shut down complete
+2023-06-27 20:00:49.207 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:00:49.340 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 20:00:49.342 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 20:00:49.343 +03:00 [INF] App Started
+2023-06-27 20:00:49.343 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:00:49.343 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:00:49.344 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 20:00:49.750 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 20:00:49.893 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 144.0456ms
+2023-06-27 20:00:50.018 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 20:00:50.025 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:00:50.118 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 100.4813ms
+2023-06-27 20:00:57.799 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: "00:00:02", через []
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:00:59.829 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:01:08.317 +03:00 [INF] Application is shutting down...
+2023-06-27 20:01:08.338 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: "00:00:04", через []
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:01:12.357 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:01:20.857 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: "00:00:06", через []
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:01:26.865 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:01:35.356 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 20:01:35.373 +03:00 [INF] Shut down complete
+2023-06-27 20:01:43.381 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:01:43.512 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 20:01:43.514 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 20:01:43.515 +03:00 [INF] App Started
+2023-06-27 20:01:43.515 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:01:43.516 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:01:43.516 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 20:01:43.953 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 20:01:44.098 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 146.6128ms
+2023-06-27 20:01:44.216 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 20:01:44.224 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:01:44.320 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.4324ms
+2023-06-27 20:01:51.977 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:02"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:01:54.009 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:02:00.883 +03:00 [INF] Application is shutting down...
+2023-06-27 20:02:02.487 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:04"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:02:06.495 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:02:14.978 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:06"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:02:21.757 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:02:21.888 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 20:02:21.890 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 20:02:21.891 +03:00 [INF] App Started
+2023-06-27 20:02:21.891 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:02:21.892 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:02:21.893 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 20:02:22.426 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 20:02:22.573 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 147.8719ms
+2023-06-27 20:02:22.701 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 20:02:22.709 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:02:22.802 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 100.4197ms
+2023-06-27 20:02:30.329 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: "00:00:02", через []
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:02:32.359 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:02:40.866 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: "00:00:04", через []
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:02:41.039 +03:00 [INF] Application is shutting down...
+2023-06-27 20:02:44.875 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:02:53.367 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: "00:00:06", через []
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:02:59.380 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:03:07.888 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 20:03:07.900 +03:00 [INF] Shut down complete
+2023-06-27 20:03:27.611 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:03:27.743 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 20:03:27.745 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 20:03:27.749 +03:00 [INF] App Started
+2023-06-27 20:03:27.750 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:03:27.750 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:03:27.750 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 20:03:28.170 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 20:03:28.313 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 145.1739ms
+2023-06-27 20:03:28.433 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 20:03:28.441 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:03:28.535 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 102.2478ms
+2023-06-27 20:03:36.196 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:02"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:03:38.222 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:03:44.248 +03:00 [INF] Application is shutting down...
+2023-06-27 20:03:46.702 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:04"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:03:52.629 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:03:52.760 +03:00 [INF] Now listening on: https://localhost:7142
+2023-06-27 20:03:52.762 +03:00 [INF] Now listening on: http://localhost:5041
+2023-06-27 20:03:52.763 +03:00 [INF] App Started
+2023-06-27 20:03:52.763 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:03:52.764 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:03:52.764 +03:00 [INF] Content root path: D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc
+2023-06-27 20:03:53.023 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/index.html - -
+2023-06-27 20:03:53.166 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/index.html - - - 200 - text/html;charset=utf-8 144.0736ms
+2023-06-27 20:03:53.281 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - -
+2023-06-27 20:03:53.288 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:03:53.381 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7142/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 99.2856ms
+2023-06-27 20:04:01.203 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:02"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:04:03.231 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:04:11.717 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:04"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:04:15.725 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:04:24.231 +03:00 [WRN] Ошибка при отправке сообшения, повторная отправка номер: [], через "00:00:06"
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-27 20:04:30.248 +03:00 [INF] Sending email to IppolitovIS@yandex.ru, with Приложение запущено, Приложение запущено.
+2023-06-27 20:04:38.764 +03:00 [ERR] Ошибка отправки сообщения! Сообщение не было отпаврлено
+System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.TaskToApm.End(IAsyncResult asyncResult)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectNetworkAsync(String host, Int32 port, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, CancellationToken cancellationToken)
+   at OnlineShopPoc.MailKitSmtpEmailSender.EnsureConnectedAndAuthentificatedAsync() in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 55
+   at OnlineShopPoc.MailKitSmtpEmailSender.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\MailKitSmtpEmailSender.cs:line 46
+   at OnlineShopPoc.EmailSenderLoggingDecorator.SendEmailAsync(String recepientEmail, String subject, String body) in D:\ITStep\ASP.NET_Core\OnlineShopPoc\OnlineShopPoc\Services\Decorators\EmailSenderLoggingDecorator.cs:line 24
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-27 20:06:12.777 +03:00 [INF] Application is shutting down...
+2023-06-27 20:06:12.788 +03:00 [INF] Shut down complete

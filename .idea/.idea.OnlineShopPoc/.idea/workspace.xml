@@ -9,10 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="Реализована отправка повторных сообщений при неуспешной отправке.">
+    <list default="true" id="27c97ebd-b451-4e82-861a-5cfd93381f23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/OnlineShopPoc/SentryConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/Decorators/EmailSenderRetryDecorator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineShopPoc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/SalesNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/SalesNotificatorBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/AppStartedNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/BackgroundServices/AppStartedNotificatorBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/EmailSenderLoggingDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/Decorators/EmailSenderLoggingDecorator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/ICatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/ICatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/ICurrentTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/ICurrentTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/IEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/IEmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/InMemoryCatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/InMemoryCatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MailKitSmtpEmailSender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/MailKitSmtpEmailSender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/MondayTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/MondayTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/OnlineShopPoc.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/SalesNotificatorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/BackgroundServices/SalesNotificatorBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnlineShopPoc/UtcCurrentTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineShopPoc/Services/UtcCurrentTime.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +38,19 @@
       </map>
     </option>
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d4ad1df6-bfe2-45b8-98bf-259798a052cd" />
+        <option name="url" value="https://github.com/IlyaIppolitov/OnlineShopPoc.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7bcdc699102c470890dba28faba1fa95d5c00/a8/e85664c1/MailService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7bcdc699102c470890dba28faba1fa95d5c00/be/5854bcfc/MailTransport.cs" root0="SKIP_HIGHLIGHTING" />
@@ -36,6 +61,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d894e53c1d0e27ee0e666475a55d3c2db944f4221f0b6de4ebda38ff1fa/IActionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/79fbf5ff554b611622a4207ff363d1c026ccac52f8ef8f6318a1cc5ab7e4/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/ITStep/ASP.NET_Core/OnlineShopPoc/OnlineShopPoc/SalesNotificatorBackgroundService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2QnMFBHZGcTlwcsVCRgkkpPsw05" />
@@ -143,7 +169,8 @@
       <workItem from="1687537711462" duration="5734000" />
       <workItem from="1687679400899" duration="91000" />
       <workItem from="1687700353488" duration="9787000" />
-      <workItem from="1687795854830" duration="3094000" />
+      <workItem from="1687795854830" duration="5836000" />
+      <workItem from="1687881948783" duration="5634000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлен Guid для Product">
       <created>1686397378577</created>
@@ -257,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687795901287</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Повторная отрпавка сообщений переделана.">
+      <created>1687801986017</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687801986017</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +326,7 @@
     <MESSAGE value="Реализовано логирование при помощи паттерна Декоратор." />
     <MESSAGE value="Добавлена возможность изменений SmtpConfig без перезапуска&#10;Добавлен EmailSenderLoggingDecorator" />
     <MESSAGE value="Реализована отправка повторных сообщений при неуспешной отправке." />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализована отправка повторных сообщений при неуспешной отправке." />
+    <MESSAGE value="Повторная отрпавка сообщений переделана." />
+    <option name="LAST_COMMIT_MESSAGE" value="Повторная отрпавка сообщений переделана." />
   </component>
 </project>

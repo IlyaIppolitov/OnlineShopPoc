@@ -2,6 +2,8 @@ using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using OnlineShopPoc;
+using Sentry;
+using Sentry.Extensions.Logging.Extensions.DependencyInjection;
 using Serilog;
 
 // Инициализация временного логгера, для контроля процесса загрузки
@@ -14,7 +16,9 @@ Log.Information("Starting up");
 try
 {
     var builder = WebApplication.CreateBuilder(args);
-
+    
+    
+    
     // Подключение Serilog
     builder.Host.UseSerilog((_, conf) =>
     {
@@ -33,6 +37,10 @@ try
         .BindConfiguration("SmtpConfig")
         .ValidateDataAnnotations()
         .ValidateOnStart();
+    
+    // Подключение SentryConfig, настраемого из файла конфигураций json
+    builder.Services.AddOptions<SentryConfig>()
+        .BindConfiguration("SentryConfig");
 
     // Подключение пользовательских секретов
     // builder.Configuration.AddUserSecrets<SmtpConfig>();
@@ -49,8 +57,9 @@ try
     // Scoped
     builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
     builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
+    builder.Services.Decorate<IEmailSender, EmailSenderRetryDecorator>();
     builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
-    builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
+    // builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
 
     var app = builder.Build();
 

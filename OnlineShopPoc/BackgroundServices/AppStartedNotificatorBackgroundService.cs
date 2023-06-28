@@ -24,7 +24,7 @@ public class AppStartedNotificatorBackgroundService : BackgroundService
             var localServiceProvider = scope.ServiceProvider;
             var emailSender = localServiceProvider.GetRequiredService<IEmailSender>();
 
-            // await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение запущено", "Приложение запущено");
+            await emailSender.SendEmailAsync("IppolitovIS@yandex.ru", "Приложение запущено", "Приложение запущено");
         }
 
         // Циклическая отправка сообщения о работоспособности сервиса
